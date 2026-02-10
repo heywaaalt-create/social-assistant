@@ -78,8 +78,8 @@ class ActionSuggestion(BaseModel):
     id: str = Field(default_factory=_uuid)
     content_item_id: str
     action_type: ActionType
-    relevance_score: int = Field(ge=0, le=10)
-    heat_score: int = Field(ge=0, le=10)
+    relevance_score: float = Field(ge=0, le=10)
+    heat_score: float = Field(ge=0, le=10)
     suggested_angle: str = ""
     priority: int = 0
     risk_flags: list[str] = Field(default_factory=list)
