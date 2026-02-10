@@ -1,0 +1,44 @@
+collector:
+  schedule_interval_hours: 4
+  keywords:
+    - 展覽
+    - 美術館
+    - 導覽
+    - 當代藝術
+    - 博物館
+    - 策展
+    - 藝術家
+    - 畫展
+    - 雕塑
+    - 攝影展
+  news_sources:
+    - name: ARTouch
+      url: https://artouch.com/
+      type: rss
+    - name: 非池中
+      url: https://artemperor.tw/
+      type: scrape
+
+analyzer:
+  min_relevance_score: 5.0
+  min_heat_score: 3.0
+  daily_post_limit: 3
+  daily_reply_limit: 10
+  risk_keywords:
+    - 政治
+    - 選舉
+    - 爭議
+    - 抄襲
+
+generator:
+  max_retries: 3
+  max_post_length: 500
+  max_reply_length: 300
+
+reviewer:
+  publish_hours: [10, 15, 20]
+
+publisher:
+  retry_count: 3
+  retry_delay_seconds: 60
+  metrics_check_interval_hours: 24
